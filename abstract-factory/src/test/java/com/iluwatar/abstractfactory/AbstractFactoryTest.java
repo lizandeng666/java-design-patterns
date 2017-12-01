@@ -25,9 +25,15 @@ package com.iluwatar.abstractfactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.iluwatar.abstractfactory.App.FactoryMaker;
+import com.iluwatar.abstractfactory.App.FactoryMaker.KingdomType;
+
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test for abstract factory
+ */
 public class AbstractFactoryTest {
 
   private App app = new App();
@@ -36,8 +42,8 @@ public class AbstractFactoryTest {
 
   @Before
   public void setUp() {
-    elfFactory = new ElfKingdomFactory();
-    orcFactory = new OrcKingdomFactory();
+    elfFactory = FactoryMaker.makeFactory(KingdomType.ELF);
+    orcFactory = FactoryMaker.makeFactory(KingdomType.ORC);
   }
 
   @Test

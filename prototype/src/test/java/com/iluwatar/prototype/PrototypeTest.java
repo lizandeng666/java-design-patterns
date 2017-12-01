@@ -22,21 +22,20 @@
  */
 package com.iluwatar.prototype;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertSame;
 
+import java.util.Arrays;
+import java.util.Collection;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
 /**
  * Date: 12/28/15 - 8:45 PM
- *
+ * @param <P> Prototype
  * @author Jeroen Meulemeester
  */
 @RunWith(Parameterized.class)
@@ -57,7 +56,7 @@ public class PrototypeTest<P extends Prototype> {
   /**
    * The tested prototype instance
    */
-  private final Prototype testedPrototype;
+  private final P testedPrototype;
 
   /**
    * The expected {@link Prototype#toString()} value
@@ -70,7 +69,7 @@ public class PrototypeTest<P extends Prototype> {
    * @param testedPrototype  The tested prototype instance
    * @param expectedToString The expected {@link Prototype#toString()} value
    */
-  public PrototypeTest(final Prototype testedPrototype, final String expectedToString) {
+  public PrototypeTest(final P testedPrototype, final String expectedToString) {
     this.expectedToString = expectedToString;
     this.testedPrototype = testedPrototype;
   }
